@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeSync - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="auth-container">
+
+  <h2 id="formTitle">Login</h2>
+
+  <input type="text" id="username" placeholder="Username" class="inputBox" />
+  <input type="password" id="password" placeholder="Password" class="inputBox" />
+
+  <!--  Role selection (for register only) -->
+  <select id="role" class="inputBox" style="display:none;">
+    <option value="editor">Editor</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <button id="submitBtn" class="btn primaryBtn">Login</button>
+
+  <p id="toggleText">
+    Don't have an account?
+    <span id="toggleBtn" class="link">Register</span>
+  </p>
+
+  <p id="errorMsg" style="color:red;"></p>
+
+</div>
+
+<script type="module" src="js/auth.js"></script>
+
+</body>
+</html>

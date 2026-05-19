@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Sync - Home</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="landing.css" />
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="header-left">
+      <img src="code-sync.png" alt="Code Sync Logo" class="logo-mark" />
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="login.html">Login</a> <!-- 🔥 NEW -->
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <p class="hero-tagline">Realtime · Familiar · In the browser</p>
+
+        <h2>Collaborate like VS Code. Together, live.</h2>
+
+        <p>
+          A real-time collaborative code editor with syntax highlighting,
+          chat, and live synchronization.
+        </p>
+
+        <div class="hero-actions">
+
+          <!-- 🔥 UPDATED -->
+          <button class="btn primary" onclick="goToLogin()">
+            Join a Room
+          </button>
+
+          <button class="btn ghost" onclick="scrollToFeatures()">
+            See features
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Preview -->
+      <div class="hero-preview">
+
+        <div class="hero-editor-chrome">
+
+          <div class="hero-editor-header">
+            <span class="dot red"></span>
+            <span class="dot amber"></span>
+            <span class="dot green"></span>
+            <span class="hero-editor-title">room-1234 • Code Sync</span>
+          </div>
+
+          <div class="hero-editor-body">
+
+            <div class="hero-editor-sidebar"></div>
+
+            <div class="hero-editor-main">
+              <div class="hero-editor-tab active">main.py</div>
+
+              <pre>
+<span class="kw">def</span> <span class="fn">hello</span>():
+    <span class="kw">return</span> <span class="str">"Hello from Code Sync"</span>
+              </pre>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="features" id="features">
+
+    <div class="feature">
+      <h3>Monaco Editor</h3>
+      <p>VS Code–like editor with syntax highlighting.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Real-time Collaboration</h3>
+      <p>Multiple users edit the same file instantly.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Built-in Chat</h3>
+      <p>Communicate with teammates inside the editor.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Room-based Access</h3>
+      <p>Join rooms securely using unique IDs.</p>
+    </div>
+
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="steps">
+    <h2>How It Works</h2>
+
+    <p>1. Login to your account.</p>
+    <p>2. Enter a room ID.</p>
+    <p>3. Start coding collaboratively in real-time.</p>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about" id="about">
+
+    <h2>About Code Sync</h2>
+
+    <p>
+      Code Sync is a real-time collaborative editor designed to
+      simulate a VS Code–like experience in the browser.
+    </p>
+
+    <h3>Technologies Used:</h3>
+
+    <ul>
+      <li>Frontend: HTML, CSS, JavaScript, Monaco Editor</li>
+      <li>Backend: Node.js, Express, Socket.IO</li>
+      <li>Real-time: WebSockets</li>
+    </ul>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>© 2026 Code Sync</p>
+    <p><a href="#" class="footer-link">GitHub</a></p>
+  </footer>
+
+  <!-- ================= JS ================= -->
+  <script>
+
+    // 🔥 NEW: Redirect logic
+    function goToLogin() {
+      const token = localStorage.getItem("token");
+
+      // If already logged in → go directly to app
+      if (token) {
+        window.location.href = "app.html";
+      } else {
+        window.location.href = "login.html";
+      }
+    }
+
+    function scrollToFeatures() {
+      document.getElementById("features").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+  </script>
+
+</body>
+</html>
